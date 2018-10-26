@@ -25,7 +25,7 @@
     <div class="chat">
       <div class="header">
         <div class="left-header">
-          <div class="left-header__title">testGroup2</div>
+          <div class="left-header__title">testGroup</div>
           <ul class="left-header__members">
             Member：
             <li class="member">testName</li>
@@ -36,22 +36,19 @@
         </div>
       </div>
 
-      <div class="messages js-messages">
+      <div class="messages">
         <%= render partial: "message" %>
       </div>
 
       <div class="form">
-        <form class="js-form" id="new_message" enctype="multipart/form-data" action="/groups/25102/messages" accept-charset="UTF-8" method="post">
-          <input name="utf8" type="hidden" value="✓">
-          <input type="hidden" name="authenticity_token" value="W3TmUprelV395jicJWv39GL9WykYf9KpvBu6H76kXU4qK9b8pY3IhkGsJelAVDPkwHs/GmRTcpfXn8Usy6q7qw==">
-          <input class="form__message js-content" placeholder="type a message" type="text" name="message[content]" id="message_content">
+        <form>
+          <input class="form__message" placeholder="type a message" type="text">
           <div class="form__mask">
             <label class="form__mask__image" for="message_image">
               <i class="fa fa-picture-o icon"></i>
-              <input class="hidden js-file" type="file" name="message[image]" id="message_image">
             </label>
           </div>
-          <input type="submit" name="commit" value="Send" class="form__submit" data-disable-with="Send">
+          <input type="submit" value="Send" class="form__submit">
         </form>
       </div>
     </div>
