@@ -16,6 +16,6 @@
         %input.form__message{placeholder: "type a message"}
         .form__mask
           %label.form__mask__image
-            %i.fa.fa-picture-o.icon
+            = fa_icon 'picture-o', class: 'icon'
             %input.hidden{type: 'file'}
         %input.form__submit{type: "submit", value: "Send"}
