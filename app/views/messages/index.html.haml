@@ -1,33 +1,21 @@
-%body
-  .notification
-  .wrapper
-    .side-bar
-      .header
-        %h3.header__name testName
-        %ul.header__lists
-          %li.list
-            %a{:href => ""}
-              %i.fa.fa-pencil-square-o.icon
-          %li.list
-            %a{:href => ""}
-              %i.fa.fa-cog.icon
-      .groups
-        = render partial: "group"
-    .chat
-      .header
-        .left-header
-          .left-header__title testGroup
-          %ul.left-header__members
-            Member：
-            %li.member testName
-        .right-header
-          %a.right-header__button{:href => ""} Edit
-      .messages
-        = render partial: "message"
-      .form
-        %form
-          %input.form__message{:placeholder => "type a message", :type => "text"}
-          .form__mask
-            %label.form__mask__image{:for => "message_image"}
-              %i.fa.fa-picture-o.icon
-          %input.form__submit{:type => "submit", :value => "Send"}
+.wrapper
+  = render partial: "side-bar"
+  .chat
+    .header
+      .left-header
+        .left-header__title testGroup
+        %ul.left-header__members
+          Member：
+          %li.member testName
+      .right-header
+        = link_to "Edit","", class: 'right-header__button'
+    .messages
+      = render partial: "message"
+    .form
+      %form
+        %input.form__message{placeholder: "type a message"}
+        .form__mask
+          %label.form__mask__image
+            %i.fa.fa-picture-o.icon
+            %input.hidden{type: 'file'}
+        %input.form__submit{type: "submit", value: "Send"}
