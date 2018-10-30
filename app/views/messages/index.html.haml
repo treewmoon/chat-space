@@ -1,0 +1,21 @@
+.wrapper
+  = render partial: "side-bar"
+  .chat
+    .header
+      .left-header
+        .left-header__title testGroup
+        %ul.left-header__members
+          Member：
+          %li.member testName
+      .right-header
+        = link_to "Edit","", class: 'right-header__button'
+    .messages
+      = render partial: "message"
+    .form
+      %form
+        %input.form__message{placeholder: "type a message"}
+        .form__mask
+          %label.form__mask__image
+            = fa_icon 'picture-o', class: 'icon'
+            %input.hidden{type: 'file'}
+        %input.form__submit{type: "submit", value: "Send"}
