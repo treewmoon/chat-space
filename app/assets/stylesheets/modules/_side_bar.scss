@@ -6,7 +6,9 @@
   width: 300px;
 
   .header {
-    background-color: #253141;
+    // background-color: #253141;
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
     height: 100px;
     line-height: 100px;
     padding: 0 20px;
@@ -20,7 +22,9 @@
   }
 
   .groups {
-    background-color: #2f3e51;
+    // background-color: #2f3e51;
+    background-color: #08AEEA;
+    background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
     height: calc(100vh - 100px);
     padding: 0 20px;
     .group {
