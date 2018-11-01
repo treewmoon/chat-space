@@ -98,7 +98,7 @@
       cursor: pointer;
 
       &.chat-group-user__btn--add {
-        color: #38aef0;
+        color: $light_blue;
       }
 
       &.chat-group-user__btn--remove {
@@ -111,7 +111,7 @@
     display: inline-block;
     padding: 12px 20px;
     color: #fff;
-    background-color: #38aef0;
+    background-color: $light_blue;
     border: 0;
   }
 }
