@@ -3,14 +3,14 @@
   color: $white;
   width: 300px;
   .header {
-    // background-color: $side_blue_dark;
+    // background-color: #253141;
     background-color: #66d9e8;
     height: 100px;
     line-height: 100px;
     padding: 0 20px;
     &__name {
       display: inline-block;
-      font-size: $side_header_font;
+      font-size: $16px;
       font-weight: bold;
     }
     &__lists {
@@ -21,26 +21,27 @@
       }
       .icon {
         color: $white;
-        font-size: $side_header_font;
+        font-size: $16px;
       }
     }
   }
 
   .groups {
-    // background-color: $side_blue_light;
+    // background-color: #2f3e51;
     background-color: #96f2d7;
     height: calc(100vh - 100px);
     padding: 0 20px;
     .group {
       box-sizing: border-box;
       padding: 20px 0 40px;
+      text-decoration: none;
       &__name {
         color: $white;
-        font-size: $side_group_name;
+        font-size: 15px;
       }
       &__message {
         color: $white;
-        font-size: $side_group_message;
+        font-size: 11px;
         margin-top: 5px;
       }
     }
