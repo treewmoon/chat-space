@@ -36,6 +36,11 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.form__message').val('');
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'slow');
+      $('.form__submit').prop("disabled", false);
+    })
+    .fail(function(){
+      alert('メッセージの投稿に失敗しました。');
     })
   })
 })
