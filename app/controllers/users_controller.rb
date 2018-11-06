@@ -2,6 +2,13 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def index
+    @users = User.where('name LIKE(?) and name != ?', "%#{params[:keyword]}%")
+    respond_to do |format|
+      format.html
+      format.json
+  end
+end
 
 # current_user.updateに成功 → rootにリダイレクト
 # 失敗 → editのビューを再度描画
