@@ -32,5 +32,8 @@ $(function() {
         appendNoUser("一致するユーザーはいません");
       }
     })
+    .fail(function(){
+      alert("メンバー検索に失敗しました");
+    });
   });
 });
