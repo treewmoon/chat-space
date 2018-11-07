@@ -11,12 +11,12 @@
             - @group.users.each do |user|
               = user.name
       .right-header
-        = link_to "Edit","", class: 'right-header__button'
+        = link_to "Edit",edit_group_path(@group), class: 'right-header__button'
     .messages
       = render @messages
     .form
       = form_for [@group, @message], html: {id: 'new_message'} do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message',autocomplete: "off"
         .form__mask
           = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
