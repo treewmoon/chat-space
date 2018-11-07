@@ -1,6 +1,8 @@
 $(function() {
 
   var user_result = $("#user-search-result");
+  var user_list = $("#chat-group-users")
+
   function appendUser(user){
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${user.name}</p>
@@ -8,9 +10,19 @@ $(function() {
                 </div>`
     user_result.append(html);
   }
+
   function appendNoUser(text){
     var html = `<div class="chat-group-user clearfix">${text}</div>`
       user_result.append(html);
+  }
+
+  function appendUserList(user_id, user_name){
+    var html =`<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
+                <input name='group[user_ids][]' type='hidden' value='${user_id}'>
+                <p class='chat-group-user__name'>${user_name}</p>
+                <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+              </div>`
+    user_list.append(html);
   }
 
   $('#user-search-field').on("keyup", function() {
@@ -37,6 +49,10 @@ $(function() {
     });
   });
   $('#user-search-result').on('click', '.user-search-add', function(){
-    console.log(this);
+    var user_id = $(this).attr('data-user-id');
+    var user_name = $(this).attr('data-user-name');
+    appendUserList(user_id, user_name);
+    $(this).parent().remove();
+    $('#user-search-field').val('');
   });
 });
