@@ -55,4 +55,7 @@ $(function() {
     $(this).parent().remove();
     $('#user-search-field').val('');
   });
+  $(document).on('click', '.js-remove-btn', function(){
+        $(this).parent().remove();
+      });
 });
