@@ -48,7 +48,6 @@ $(document).on('turbolinks:load', function(){
     var lastMessageId = $('.message').last().attr('message-id');
     var presentHTML = window.location.href;
     if (presentHTML.match(/\/groups\/\d+\/messages/)) {
-      console.log(lastMessageId)
       $.ajax ({
         url: presentHTML,
         type: 'GET',
@@ -56,6 +55,13 @@ $(document).on('turbolinks:load', function(){
         dataType: 'json',
       })
       .done(function(json){
+        var $messages = $('.messages');
+        var insertHTML ="";
+        json.forEach(function(message) {
+          insertHTML += buildHTML(message);
+          $messages.append(insertHTML);
+          $messages.animate({scrollTop: $messages[0].scrollHeight}, 'fast');
+        });
       })
       .fail(function() {
         alert('');
@@ -65,4 +71,3 @@ $(document).on('turbolinks:load', function(){
     }
   },5000);
 })
-
