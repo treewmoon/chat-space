@@ -1,4 +1,4 @@
-# ChatSpaceのDB設計をしよう
+# DB設計
 
 ## 1.usersテーブル
 
