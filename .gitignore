@@ -18,3 +18,6 @@
 
 #投稿された画像がコミットされないように
 public/uploads/*
+
+# AWSのアクセスキーをプッシュできないように
+config/secrets.yml
