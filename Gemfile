@@ -66,7 +66,7 @@ group :test do
   gem 'faker'
 end
 
-gem "loofah", ">= 2.2.3"
+gem "loofah", ">= 2.2.2"
 
 group :production do
   gem 'unicorn'
