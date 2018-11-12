@@ -67,3 +67,7 @@ group :test do
 end
 
 gem "loofah", ">= 2.2.3"
+
+group :production do
+  gem 'unicorn'
+end
